@@ -91,7 +91,7 @@ function productViewPage(req, res) {
     {
         MongoClient.connect(urldb, { useUnifiedTopology: true }, function(err, db) {
             if (err) throw err;
-            var dbo = db.db("atnshop");
+            var dbo = db.db("ATNshop");
             dbo.collection("product").find({}).toArray(function(err, productlist) {
               if (err) throw err;
               
@@ -367,7 +367,7 @@ function qrPage(req, res) {
 
             console.log("\n\t", inter[key][1]["address"] );
 
-            str = "https://www.facebook.com/Tu.NN79/";
+            str = "facebook.com/van.manh.94695459";
             sv = new QRCode({
                 content: str,
                 padding: 4,

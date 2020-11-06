@@ -19,8 +19,8 @@ var storage = multer.diskStorage({
 });
 var uploadStore = multer({ storage: storage });
 
-const dbname = 'atnshop';
-const uri = 'mongodb://localhost:27017/' + dbname;
+const dbname = 'atnshopatnshop';
+const uri = 'mongodb+srv://admin:bWhxdRMB7JEmLXro@cluster0.iermt.mongodb.net/aatnshop?retryWrites=true&w=majority' + dbname;
 
 /// --- Code CONTROLLERs
 router.use(function timeLog (req, res, next) {
@@ -36,7 +36,7 @@ function productPage(req, res) {
     {
         MongoClient.connect(urldb, { useUnifiedTopology: true }, function(err, db) {
             if (err) throw err;
-            var dbo = db.db("atnshop");
+            var dbo = db.db("ATNshop");
             dbo.collection("product").find({}).toArray(function(err, productlist) {
               if (err) throw err;
               
